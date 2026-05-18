@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <meta name="theme-color" content="#C0161A" />
+  <title>IUTDS Recruitments — It's Time</title>
+  <meta name="description"
+    content="Join IUTDS! Applications are now open for recruitment. Be part of something bigger — Be IUTDS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- =========================================================
+       HERO SECTION
+  ========================================================== -->
+  <section class="hero" id="hero">
+
+    <!-- Background image fills entire hero -->
+    <div class="hero-bg"></div>
+
+    <!-- Animated shimmer overlay -->
+    <div class="hero-shimmer"></div>
+
+    <!-- ── CONTENT ── -->
+    <div class="hero-content">
+
+      <!-- Logo / hero image replacing "IT'S TIME" text -->
+      <div class="logo-wrap" id="logo-wrap">
+        <img src="ItsTime.png" alt="It's Time — IUTDS" class="hero-logo" id="hero-logo"
+          onerror="this.style.display='none'; document.getElementById('fallback-title').style.display='block';" />
+        <!-- Fallback rendered title if image is missing -->
+        <h1 class="fallback-title" id="fallback-title" style="display:none;">IT'S TIME</h1>
+      </div>
+
+      <!-- Sub-badge -->
+      <div class="recruit-badge" id="recruit-badge">
+        <span class="badge-line"></span>
+        <span class="badge-text">IUTDS RECRUITMENTS</span>
+        <span class="badge-line"></span>
+      </div>
+
+      <!-- Recruitment subtext -->
+      <p class="subtext" id="subtext">
+        Your moment to rise. IUTDS — IUT's premier debating society — is officially<br />
+        opening its doors. Whether you speak to inspire, argue to win, or lead to serve,<br />
+        <strong>we want you on our team.</strong>
+      </p>
+
+      <!-- Scroll cue -->
+      <a href="#form-section" class="scroll-cta" id="scroll-cta">
+        <span>Apply Now</span>
+        <svg class="arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+
+    </div><!-- /.hero-content -->
+
+    <!-- Bottom tagline (fixed to foot of hero) -->
+    <div class="hero-footer" id="hero-footer">
+      <div class="tagline">
+        <!-- lightning bolt left -->
+        <svg class="bolt" viewBox="0 0 24 24" fill="#F5A623">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        <span>BE PART OF SOMETHING BIGGER. BE <em>IUTDS.</em></span>
+        <!-- lightning bolt right -->
+        <svg class="bolt" viewBox="0 0 24 24" fill="#F5A623">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+      </div>
+
+      <!-- Brush stroke decoration -->
+      <div class="brush-bar"></div>
+    </div>
+
+  </section><!-- /.hero -->
+
+
+  <!-- =========================================================
+       FORM SECTION
+  ========================================================== -->
+  <section class="form-section" id="form-section">
+
+    <!-- Same bg continues -->
+    <div class="form-bg"></div>
+
+    <div class="form-container" id="form-container">
+
+      <div class="form-header" id="form-header">
+        <p class="form-eyebrow">⚡ Applications Open</p>
+        <h2 class="form-title">Ready to join IUTDS?</h2>
+        <p class="form-desc">
+          Fill out the form below and take your first step into IUT's most dynamic debating society.
+          Recruitment is competitive — make your words count.
+        </p>
+      </div>
+
+      <!-- ──────────────────────────────────────────────────────
+           PASTE YOUR GOOGLE FORM EMBED LINK BELOW.
+           Replace the src value with your Google Form embed URL.
+           Format: https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true
+      ─────────────────────────────────────────────────────── -->
+      <div class="iframe-wrapper" id="iframe-wrapper">
+        <iframe id="google-form-iframe"
+          src="https://docs.google.com/forms/d/e/1FAIpQLScR3gWrHQZxqnNscW_f0cXxeTLsW7wtWlbqVQ7YobUfUjauPA/viewform?embedded=true"
+          frameborder="0" marginheight="0"
+          marginwidth="0" allowfullscreen title="IUTDS Recruitment Form">Loading form…</iframe>
+        <div class="iframe-placeholder" id="iframe-placeholder">
+          <p>📋 Google Form will appear here.</p>
+          <p class="placeholder-hint">Replace <code>YOUR_GOOGLE_FORM_EMBED_LINK_HERE</code> in <code>index.html</code>
+            with your Google Form embed URL.</p>
+        </div>
+      </div>
+
+    </div><!-- /.form-container -->
+
+    <!-- Footer tagline repeated -->
+    <div class="form-section-footer" id="form-section-footer">
+      <div class="tagline">
+        <svg class="bolt" viewBox="0 0 24 24" fill="#F5A623">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+        <span>BE PART OF SOMETHING BIGGER. BE <em>IUTDS.</em></span>
+        <svg class="bolt" viewBox="0 0 24 24" fill="#F5A623">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+      </div>
+      <div class="brush-bar"></div>
+    </div>
+
+  </section><!-- /.form-section -->
+
+
+  <script src="main.js"></script>
+</body>
+
+</html>
