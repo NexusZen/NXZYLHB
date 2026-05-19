@@ -409,6 +409,177 @@ body {
 }
 
 /* ============================================================
+   WHY IUTDS SECTION
+   ============================================================ */
+.why-section {
+  position: relative;
+  padding: 6rem 1.5rem 0;
+  overflow: hidden;
+}
+
+.why-bg {
+  position: absolute;
+  inset: 0;
+  background: url('Bg.png') center center / cover no-repeat;
+  z-index: 0;
+}
+
+.why-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(80, 0, 0, 0.45);
+}
+
+.why-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+/* ── Section heading ── */
+.why-heading-wrap {
+  text-align: center;
+  animation: dropIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.why-heading-img {
+  max-width: min(560px, 82vw);
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 6px 24px rgba(0,0,0,0.4));
+  transition: transform 0.3s ease;
+}
+
+.why-heading-img:hover {
+  transform: scale(1.03);
+}
+
+.why-fallback-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 11vw, 8rem);
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  text-shadow:
+    5px 5px 0px var(--red-dark),
+    0 10px 40px rgba(0,0,0,0.6);
+  line-height: 1;
+}
+
+/* ── Cards ── */
+.why-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.why-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Right-aligned: swap image to the right */
+.why-card--right {
+  direction: rtl; /* flip column order without changing DOM */
+}
+
+.why-card--right > * {
+  direction: ltr; /* restore text direction inside */
+}
+
+/* ── Image wrapper ── */
+.why-card-img-wrap {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 64px rgba(0,0,0,0.55),
+    0 0 0 2px rgba(245,166,35,0.3);
+  aspect-ratio: 4 / 3;
+}
+
+.why-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.why-card-img-wrap:hover .why-card-img {
+  transform: scale(1.05);
+}
+
+.why-card-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(192,22,26,0.18) 0%,
+    rgba(245,166,35,0.08) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Text body ── */
+.why-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.why-card-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red-dark);
+  background: var(--gold);
+  padding: 0.25em 0.85em;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.why-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: 0.04em;
+  color: var(--white);
+  line-height: 1.05;
+  text-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+
+.why-card-text {
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  line-height: 1.8;
+  color: rgba(255,255,255,0.88);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+}
+
+.why-card-text strong {
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+/* ── Section footer accent ── */
+.why-footer {
+  position: relative;
+  z-index: 2;
+  margin-top: 5rem;
+}
+
+/* ============================================================
    RESPONSIVE — TABLET  (≤ 768px)
    ============================================================ */
 @media (max-width: 768px) {
@@ -441,6 +612,24 @@ body {
     font-size: 0.68rem;
     letter-spacing: 0.15em;
     padding: 0.5rem 0.75rem 0.25rem;
+  }
+
+  /* Why IUTDS — tablet */
+  .why-section {
+    padding: 4rem 1.25rem 0;
+  }
+
+  .why-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .why-card--right {
+    direction: ltr;
+  }
+
+  .why-inner {
+    gap: 3.5rem;
   }
 }
 

@@ -41,6 +41,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+  /* ── 2b. Scroll-reveal for Why IUTDS cards ── */
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.why-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.12}s`;
+    cardObserver.observe(card);
+  });
+
+
+
   /* ── 3. Smooth active-state on CTA button ── */
   const cta = document.getElementById('scroll-cta');
   if (cta) {
